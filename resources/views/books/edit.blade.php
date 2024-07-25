@@ -103,7 +103,7 @@
         </div>
 
         <script>
-            const image = document.querySelector("#cover");
+            const image = document.querySelector("#cover_image");
 
             function removeCover(){
                 const check = document.querySelector('#flexCheckChecked');
