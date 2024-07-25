@@ -71,7 +71,7 @@
                             <td class="text-start" width="15%">{{ $book->is_published ? 'Published' : 'Not Published' }}</td>
                             <td width="15%">
                                 <a href="{{ route('books.show', $book->id) }}" class="mb-2 d-block fs-6 badge bg-info" style="width: 60%;margin: auto"><i class="fa-solid fa-eye"></i> Detail</a>
-                                <a href="" class="mb-2 d-block fs-6 badge bg-warning" style="width: 60%;margin: auto"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                <a href="{{ route('books.edit', $book->id) }}" class="mb-2 d-block fs-6 badge bg-warning" style="width: 60%;margin: auto"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
 
                                 <form action="" method="POST" style="width: 60%; margin:auto">
                                     @csrf
