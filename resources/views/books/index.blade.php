@@ -28,8 +28,8 @@
     <div class="container">
         <div class="header mb-3 mt-3">
             <div class="d-flex justify-content-between align-items-center">
-                <div class="">
-                    <a href="" class="btn btn-primary md-2"><i class="fa-solid fa-circle-plus"></i> Add Book</a>
+                <div>
+                    <a href="{{ route('books.create') }}" class="btn btn-primary md-2"><i class="fa-solid fa-circle-plus"></i> Add Book</a>
                 </div>
             </div>
         </div>
