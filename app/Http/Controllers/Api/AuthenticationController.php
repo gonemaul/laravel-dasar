@@ -26,4 +26,26 @@ class AuthenticationController extends Controller
            'message' => 'Registration successful'
         ]);
     }
+
+    public function login(Request $request){
+        $validatedData = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required']
+        ]);
+
+        if(!auth()->attempt($validatedData)){
+            return response()->json([
+               'message' => 'Invalid credentials'
+            ], 401);
+        }
+
+        $user = User::where('email', $request->email)->first();
+        $token = $user->createToken('authToken')->plainTextToken;
+
+        return response()->json([
+            'message' => 'You have successfully logged in',
+            'access_token' => $token,
+            'token_type' => 'Bearer'
+        ]);
+    }
 }
